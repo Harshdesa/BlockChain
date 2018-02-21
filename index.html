@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello World DApp</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+<style>
+div.patient1 {position: relative; left: 0px;border:1px solid black;;padding:20px;width: 600px; height: 200px;overflow-y: scroll;}
+div.patient2 {position: relative; left: 0px;border:1px solid black;;padding:20px;width: 600px; height: 200px;overflow-y: scroll;}
+div.patient3 {position: relative; left: 0px;border:1px solid black;;padding:20px;width: 600px; height: 200px;overflow-y: scroll;}
+div.hospital1 {position: relative; bottom: 730px;left: 650px;border:1px solid black;;padding:20px;width: 600px; height: 200px;overflow-y: scroll;}
+div.hospital2 {position: relative; bottom: 730px;left: 650px;border:1px solid black;;padding:20px;width: 600px; height: 200px;overflow-y: scroll;}
+div.hospital3 {position: relative; bottom: 730px;left: 650px;border:1px solid black;;padding:20px;width: 600px; height: 200px;overflow-y: scroll;}
+div.cloud {position: relative; bottom: 900px;left: 0px;border:1px solid black;;padding:20px;width: 600px; height: 200px;overflow-y: scroll;}
+</style>
+<body class="container">
+	<h1>A Simple Data Share Application</h1>
+	
+
+	
+	
+	<div class="patient1" id="patient1"> 
+		<h2>Patient 1 logs</h2>
+	</div>
+	<div><p></p><input type="text" placeholder="Payment" id="payment_patient1" />
+	<input type="text" placeholder="Voter separated by ," id="voter_patient1" />
+	<input type="text" placeholder="Recipient" id="recipient_patient1" />
+	<p>Select the private key file to sign:<input type="file" id="patient1_priv">
+        <a href="#" onclick="requestDataNoContract(this,'#payment_patient1','#voter_patient1','#recipient_patient1')" class="btn" id="Patient1">Send Data</a>
+	<a href="#" onclick="suspectedBreach()" class="btn" id="Patient1_b">Suspect Breach</a>
+	<select id="patient1Contracts"><option>Orange</option></select></div>
+	
+
+
+	
+	<div class="patient2" id="patient2">	
+		<h2>Patient 2 logs</h2>
+        </div>
+	<div><p></p><input type="text" placeholder="Payment" id="payment_patient2" />
+	<input type="text" placeholder="Voter separated by ," id="voter_patient2" />
+        <input type="text" placeholder="Recipient" id="recipient_patient2" />
+	<p>Select the private key file to sign:<input type="file" id="patient2_priv">
+        <a href="#" onclick="requestDataNoContract(this,'#payment_patient2','#voter_patient2','#recipient_patient2')" class="btn" id="Patient2">Send Data</a>
+	<a href="#" onclick="suspectedBreach()" class="btn" id="Patient2_b">Suspect Breach</a>
+	<select id="patient2Contracts"><option>Orange</option></select></div>	
+
+
+	
+	<div class="patient3" id="patient3">
+                <h2>Patient 3 logs</h2>
+        </div>
+	<div><p></p><input type="text" placeholder="Payment" id="payment_patient3" />
+        <input type="text" placeholder="Voter separated by ," id="voter_patient3" />
+        <input type="text" placeholder="Recipient" id="recipient_patient3" />
+        <p>Select the private key file to sign:<input type="file" id="patient3_priv">
+        <a href="#" onclick="requestDataNoContract(this,'#payment_patient3','#voter_patient3','#recipient_patient3')" class="btn" id="Patient3">Send Data</a>
+	<a href="#" onclick="suspectedBreach()" class="btn" id="Patient3_b">Suspect Breach</a>
+	<select id="patient3Contracts"><option>Orange</option></select></div>
+
+
+	<div class="hospital1" id="hospital1">
+                <h2>Hospital 1 logs</h2>
+	</div>
+        <div style="position: relative; bottom: 730px;left: 650px;"><p></p><input type="text" placeholder="Payment"id="payment_hospital1" />
+	<input type="text" placeholder="Voter separated by ," id="voter_hospital1" />
+	<input type="text" placeholder="Recipient" id="recipient_hospital1" />
+	<p>Select the private key file to sign:<input type="file" id="hospital1_priv">
+        <a href="#" onclick="requestDataNoContract(this,'#payment_hospital1','#voter_hospital1','#recipient_hospital1')" class="btn" id="Hospital1">Send Data</a>
+	<a href="#" onclick="startContract(this,'#payment_hospital1','#voter_hospital1','#recipient_hospital1','hospital1Contracts')" class="btn" id="Hospital1">Start Contract</a>
+	<a href="#" onclick="suspectedBreach('hospital1Contracts')" class="btn" id="Hospital1_b">Suspect Breach</a>
+	<select id="hospital1Contracts"><option>Orange</option></select></div>
+	
+
+
+
+	<div class="hospital2" id="hospital2">
+                <h2>Hospital 2 logs</h2>
+        </div>
+        <div style="position: relative; bottom: 730px;left: 650px;"><p></p><input type="text" placeholder="Payment" id="payment_hospital2" />
+	<input type="text" placeholder="Voter separated by ," id="voter_hospital2" />
+	<input type="text" placeholder="Recipient" id="recipient_hospital2" />
+	<p>Select the private key file to sign:<input type="file" id="hospital2_priv">
+        <a href="#" onclick="requestDataNoContract(this,'#payment_hospital2','#voter_hospital2','#recipient_hospital2')" class="btn" id="Hospital2">Send Data</a>
+	<a href="#" onclick="startContract(this,'#payment_hospital2','#voter_hospital2','#recipient_hospital2','hospital2Contracts')" class="btn" id="Hospital2">Start Contract</a>
+	<a href="#" onclick="suspectedBreach('hospital2Contracts')" class="btn" id="Hospital2_b">Suspect Breach</a>
+	<select id="hospital2Contracts"><option>Orange</option></select></div>
+        
+
+
+
+	<div class="hospital3" id="hospital3">        
+		<h2>Hospital 3 logs</h2>
+        </div>
+        <div style="position: relative; bottom: 730px;left: 650px;"><p></p> <input type="text" placeholder="Payment" id="payment_hospital3" />
+	<input type="text" placeholder="Voter separated by ," id="voter_hospital3" />
+	<input type="text" placeholder="Recipient" id="recipient_hospital3" />
+        <p>Select the private key file to sign:<input type="file" id="hospital3_priv">
+        <a href="#" onclick="requestDataNoContract(this,'#payment_hospital3','#voter_hospital3','#recipient_hospital3')" class="btn" id="Hospital3">Send Data</a>
+	<a href="#" onclick="startContract(this,'#payment_hospital3','#voter_hospital3','#recipient_hospital3', 'hospital3Contracts')" class="btn" id="Hospital3">Start Contract</a>
+	<a href="#" onclick="suspectedBreach('hospital3Contracts')" class="btn" id="Hospital3_b">Suspect Breach</a>
+	<select id="hospital3Contracts"><option>Orange</option></select></div>
+
+
+	<div class="cloud" id="cloudDiv">
+                <h2>Cloud logs</h2>
+        </div>
+	<div style="position: relative; bottom: 900px;left: 0px;"><p></p><p>Select the data file requested to send to requestor:<input type="file" id="cloud">
+	<a href="#" onclick="sender('allContractsCloud1')" class="btn" id="Cloudbtn">Send Data</a>
+	<select id="allContractsCloud1"><option>Orange</option></select></div>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="./index.js"></script>
+<script type="text/javascript" src="./keys.js"></script>
+<script type="text/javascript" src="./privKeys.js"></script>
+<script src="./jsencrypt-master/bin/jsencrypt.min.js"></script>
+<script src="./jsrsasign-master/jsrsasign-all-min.js"></script>
+</html>
