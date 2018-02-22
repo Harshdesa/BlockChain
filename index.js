@@ -15,7 +15,7 @@ DataShareContract = web3.eth.contract(abiDefinition2);
 
 BreachContract = web3.eth.contract(abiDefinition3);
 
-contractInstance = ContractFactoryContract.at('0x06d99304dd14ba3750391c902f43348cd9295639');
+contractInstance = ContractFactoryContract.at('0x3cd4804caa16fd36aaf66cc6751f8ac4a62141bd');
 
 
 users = {"Patient1": web3.eth.accounts[1], "Patient2": web3.eth.accounts[2], "Patient3": web3.eth.accounts[3], "Hospital1": web3.eth.accounts[4], "Hospital2": web3.eth.accounts[5], "Hospital3": web3.eth.accounts[6]}
@@ -199,42 +199,42 @@ function sender(cloudDropDownId) {
 
 }
 
-window.onload = function() {
-	fileInput = document.getElementById('hospital1_priv');
-        fileInput.addEventListener('change', function(e) {
-        	var file = fileInput.files[0];// Put the rest of the demo code here.
-                setupReader(file);  
-        });
-	fileInput2 = document.getElementById('hospital2_priv');
-        fileInput2.addEventListener('change', function(e) {
-                var file = fileInput2.files[0];// Put the rest of the demo code here.
-                setupReader(file);
-        });
-	fileInput3 = document.getElementById('hospital3_priv');
-        fileInput3.addEventListener('change', function(e) {
-                var file = fileInput3.files[0];// Put the rest of the demo code here.
-                setupReader(file);
-        });
-	fileInput4 = document.getElementById('patient1_priv');
-        fileInput4.addEventListener('change', function(e) {
-                var file = fileInput4.files[0];// Put the rest of the demo code here.
-                setupReader(file);
-        });
-        fileInput5 = document.getElementById('patient2_priv');
-        fileInput5.addEventListener('change', function(e) {
-                var file = fileInput5.files[0];// Put the rest of the demo code here.
-                setupReader(file);
-        });
-        fileInput6 = document.getElementById('patient3_priv');
-        fileInput6.addEventListener('change', function(e) {
-                var file = fileInput6.files[0];// Put the rest of the demo code here.
-                setupReader(file);
-        });
-	fileInput7 = document.getElementById('cloud');
-        fileInput7.addEventListener('change', function(e) {
-                var file = fileInput7.files[0];// Put the rest of the demo code here.
-                setupReader(file);
-		//var name = file.name;
+//window.onload = function() {
+//	fileInput = document.getElementById('hospital1_priv');
+//      fileInput.addEventListener('change', function(e) {
+//	  	  var file = fileInput.files[0];// Put the rest of the demo code here.
+//	          setupReader(file);  
+// 	});
+//	fileInput2 = document.getElementById('hospital2_priv');
+//        fileInput2.addEventListener('change', function(e) {
+//               var file = fileInput2.files[0];// Put the rest of the demo code here.
+//              setupReader(file);
+//     });
+//	fileInput3 = document.getElementById('hospital3_priv');
+//      fileInput3.addEventListener('change', function(e) {
+//	           var file = fileInput3.files[0];// Put the rest of the demo code here.
+//	           setupReader(file);
+//  	});
+//	fileInput4 = document.getElementById('patient1_priv');
+//		fileInput4.addEventListener('change', function(e) {
+//	        var file = fileInput4.files[0];// Put the rest of the demo code here.
+//	        setupReader(file);
+//	 });
+//  		fileInput5 = document.getElementById('patient2_priv');
+// 		fileInput5.addEventListener('change', function(e) {
+//	        var file = fileInput5.files[0];// Put the rest of the demo code here.
+//	         setupReader(file);
+//     	 });
+//      fileInput6 = document.getElementById('patient3_priv');
+//        fileInput6.addEventListener('change', function(e) {
+//                var file = fileInput6.files[0];// Put the rest of the demo code here.
+//                setupReader(file);
+//        });
+//	fileInput7 = document.getElementById('cloud');
+//        fileInput7.addEventListener('change', function(e) {
+//                var file = fileInput7.files[0];// Put the rest of the demo code here.
+//                setupReader(file);
+//		//var name = file.name;
     		//var reader = new FileReader();
 		//var data;
     		//reader.onload = function(e) {
@@ -242,8 +242,8 @@ window.onload = function() {
         	//	console.log(data);
     		//}
     		//reader.readAsText(file, "UTF-8");
-        });
-}
+//        });
+//}
 
 function suspectedBreach(contractDropDownId) {
 	
@@ -297,6 +297,51 @@ function addContract(contractAddress, idOfCharacter) {
 
 //DESTROYING CONTRACTS WITH TIME
 window.onload = function() {
+	fileInput = document.getElementById('hospital1_priv');
+        fileInput.addEventListener('change', function(e) {
+                var file = fileInput.files[0];// Put the rest of the demo code here.
+                setupReader(file);
+        });
+        fileInput2 = document.getElementById('hospital2_priv');
+        fileInput2.addEventListener('change', function(e) {
+                var file = fileInput2.files[0];// Put the rest of the demo code here.
+                setupReader(file);
+        });     
+        fileInput3 = document.getElementById('hospital3_priv');
+        fileInput3.addEventListener('change', function(e) {
+                var file = fileInput3.files[0];// Put the rest of the demo code here.
+                setupReader(file);
+        });     
+        fileInput4 = document.getElementById('patient1_priv');
+        fileInput4.addEventListener('change', function(e) {
+                var file = fileInput4.files[0];// Put the rest of the demo code here.
+                setupReader(file);
+        });     
+        fileInput5 = document.getElementById('patient2_priv');
+        fileInput5.addEventListener('change', function(e) {
+                var file = fileInput5.files[0];// Put the rest of the demo code here.
+                setupReader(file);
+        });     
+        fileInput6 = document.getElementById('patient3_priv');
+        fileInput6.addEventListener('change', function(e) {
+                var file = fileInput6.files[0];// Put the rest of the demo code here.
+                setupReader(file);
+        });     
+        fileInput7 = document.getElementById('cloud');
+        fileInput7.addEventListener('change', function(e) {
+                var file = fileInput7.files[0];// Put the rest of the demo code here.
+                setupReader(file);
+                //var name = file.name;
+                //var reader = new FileReader();
+                //var data;
+                //reader.onload = function(e) {
+                //      data = e.target.result;
+                //      console.log(data);
+                //}     
+                //reader.readAsText(file, "UTF-8");
+        });	
+
+
 
 	for(i=0;i< contractInstance.getExistingContracts().length; i++) {
 		contractAddress = contractInstance.getParticularExistingContract(i);
